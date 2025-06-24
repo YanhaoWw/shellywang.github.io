@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Personal Website and Portfolio | Graduate student and researcher at UC Berkeley | Photographer | Consultant">
     <link rel="canonical" href="https://kingshuk.me">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin">
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&amp;display=swap">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Hi! I'm Shelly Wang">
@@ -28,6 +28,57 @@
         gtag("js",new Date),
         gtag("config","ADDYOURGTAGINFO")
     </script>
+    <style>
+        /* 添加磨砂玻璃效果 */
+        .frosted-glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        /* 优化项目卡片样式 */
+        .project-box-inner {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 25px 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .project-box-inner:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .project-box h5 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 15px;
+            color: #003366;
+        }
+        
+        /* 添加图标增强视觉效果 */
+        .project-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #003366;
+            transition: all 0.3s ease;
+        }
+        
+        .project-box:hover .project-icon {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <div class="loader">
@@ -42,11 +93,8 @@
             <span class="close-menu icon-cross2 right-boxed"></span>
             <ul class="menu-list right-boxed">
                 <li data-menuanchor="page1"><a href="#page1" aria-label="Link to Page 1">Home</a></li>
-                <!-- Updated: Projects is now page2 -->
                 <li data-menuanchor="page2"><a href="#page2" aria-label="Link to Page 2">Projects</a></li>
-                <!-- Updated: Skills is now page3 -->
                 <li data-menuanchor="page3"><a href="#page3" aria-label="Link to Page 3">Skills</a></li>
-                <!-- Updated: Resume is now page4 -->
                 <li data-menuanchor="page4"><a href="#page4" aria-label="Link to Page 4">Resume</a></li>
                 <li data-menuanchor="page5"><a href="#page5" aria-label="Link to Page 5">Contact</a></li>
             </ul>
@@ -87,7 +135,7 @@
             <a href="https://github.com/kingshukkundu" class="icon ion-social-github" aria-label="Kingshuk's Github"></a>
         </div>
         <div class="pagepiling">
-            <!-- Page 1: Home (Remains first) -->
+            <!-- Page 1: Home -->
             <div data-anchor="page1" class="pp-scrollable text-white section section-1">
                 <div class="scroll-wrap">
                     <div class="section-bg" alt="Kingshuk Kundu standing. Location: Delhi Fort" style="background-image:url(images/bg/main.webp)"></div>
@@ -115,11 +163,13 @@
                 </div>
             </div>
             
-            <!-- Page 2: Projects (Moved from original page4) -->
+            <!-- Page 2: Projects - 添加磨砂玻璃效果 -->
             <div data-anchor="page2" class="pp-scrollable section section-5">
                 <div class="scroll-wrap">
                     <div class="bg-changer">
                         <div class="section-bg" style="background-image:url(images/bg/project.webp)"></div>
+                        <!-- 添加白色覆盖层，提高磨砂效果的可视性 -->
+                        <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(255,255,255,0.3);"></div>
                     </div>
                     <div class="scrollable-content">
                         <div class="vertical-centred">
@@ -127,43 +177,56 @@
                                 <div class="vertical-title d-none d-lg-block"><span>my works</span></div>
                                 <div class="boxed">
                                     <div class="container">
-                                        <div class="intro">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <!-- 修改标题颜色为深蓝色 (#003366) -->
-                                                    <h2 class="title-uppercase" style="color:#003366;">PROJECT</h2>
-                                                    <div class="row-project-box row" style="margin-left:2.5em">
-                                                        <div class="col-project-box col-sm-6 col-md-4 col-lg-4">
-                                                            <a href="projects/energy.html" class="project-box">
-                                                                <div class="project-box-inner">
-                                                                    <!-- 修改项目标题颜色为深蓝色 (#003366) -->
-                                                                    <h5 style="color:#003366;">Energy</h5>
-                                                                </div>
-                                                            </a>
-                                                        </div>
+                                        <!-- 磨砂玻璃效果容器 -->
+                                        <div class="frosted-glass">
+                                            <div class="intro">
+                                                <div class="row">
+                                                    <div class="col-md-12 text-center">
+                                                        <h2 class="title-uppercase" style="color:#003366; margin-bottom: 30px;">PROJECTS</h2>
+                                                        <div class="row-project-box row">
+                                                            <div class="col-project-box col-sm-6 col-md-4 col-lg-4">
+                                                                <a href="projects/energy.html" class="project-box">
+                                                                    <div class="project-box-inner">
+                                                                        <div class="project-icon">
+                                                                            <i class="fas fa-bolt"></i>
+                                                                        </div>
+                                                                        <h5>Energy</h5>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
 
-                                                        <div class="col-project-box col-sm-6 col-md-4 col-lg-4">
-                                                            <a href="projects/health.html" class="project-box">
-                                                                <div class="project-box-inner">
-                                                                    <h5 style="color:#003366;">Health</h5>
-                                                                </div>
-                                                            </a>
-                                                        </div>
+                                                            <div class="col-project-box col-sm-6 col-md-4 col-lg-4">
+                                                                <a href="projects/health.html" class="project-box">
+                                                                    <div class="project-box-inner">
+                                                                        <div class="project-icon">
+                                                                            <i class="fas fa-heartbeat"></i>
+                                                                        </div>
+                                                                        <h5>Health</h5>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
 
-                                                        <div class="col-project-box col-sm-6 col-md-4 col-lg-4">
-                                                            <a href="projects/economy.html" class="project-box">
-                                                                <div class="project-box-inner">
-                                                                    <h5 style="color:#003366;">Local Economy</h5>
-                                                                </div>
-                                                            </a>
-                                                        </div>
+                                                            <div class="col-project-box col-sm-6 col-md-4 col-lg-4">
+                                                                <a href="projects/economy.html" class="project-box">
+                                                                    <div class="project-box-inner">
+                                                                        <div class="project-icon">
+                                                                            <i class="fas fa-chart-line"></i>
+                                                                        </div>
+                                                                        <h5>Local Economy</h5>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
 
-                                                        <div class="col-project-box col-sm-6 col-md-4 col-lg-4">
-                                                            <a href="projects/housing.html" class="project-box">
-                                                                <div class="project-box-inner">
-                                                                    <h5 style="color:#003366;">Housing</h5>
-                                                                </div>
-                                                            </a>
+                                                            <div class="col-project-box col-sm-6 col-md-4 col-lg-4 mt-4 mt-md-0 mx-auto">
+                                                                <a href="projects/housing.html" class="project-box">
+                                                                    <div class="project-box-inner">
+                                                                        <div class="project-icon">
+                                                                            <i class="fas fa-home"></i>
+                                                                        </div>
+                                                                        <h5>Housing</h5>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -177,7 +240,7 @@
                 </div>
             </div>
             
-            <!-- Page 3: Skills (Original page2) -->
+            <!-- Page 3: Skills -->
             <div data-anchor="page3" class="pp-scrollable section section-2">
                 <div class="scroll-wrap">
                     <div class="scrollable-content">
@@ -213,7 +276,7 @@
                 </div>
             </div>
             
-            <!-- Page 4: Resume (Original page3) -->
+            <!-- Page 4: Resume -->
             <div data-anchor="page4" class="pp-scrollable text-white section section-3">
                 <div class="scroll-wrap">
                     <div class="section-bg" style="background-image:url(images/bg/resume.webp)"></div>
@@ -278,7 +341,7 @@
                 </div>
             </div>
             
-            <!-- Page 5: Contact (Remains last) -->
+            <!-- Page 5: Contact -->
             <div data-anchor="page5" class="pp-scrollable section section-7">
                 <div class="scroll-wrap">
                     <div class="section-bg" style="background-image:url(images/bg/contact.webp)"></div>
@@ -341,6 +404,8 @@
                 </div>
             </div>
         </div>
+        <!-- 添加Font Awesome图标库 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <script src="js/jquery.min.js"></script>
         <script src="js/merged.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&amp;display=swap" rel="stylesheet">
