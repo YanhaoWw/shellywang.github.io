@@ -3,528 +3,258 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Personal Website and Portfolio | Graduate student and researcher at UC Berkeley | Photographer | Consultant">
-    <link rel="canonical" href="https://kingshuk.me">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&amp;display=swap">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Hi! I'm Shelly Wang">
-    <meta property="og:description" content="Personal Website and Portfolio">
-    <meta property="og:image" content="https://raw.githubusercontent.com/YanhaoWw/shellywang.github.io/refs/heads/main/images/bg/main.webp">
-    <meta property="og:url" content="https://kingshuk.me">
-    <meta name="author" content="Kingshuk Kundu">
-    <link rel="shortcut icon" href="favicon.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+    <meta name="description" content="Personal Website and Portfolio | Graduate student and researcher at UC Berkeley | Photographer | Consultant"/>
+
+    <!-- Canonical & Open‑Graph -->
+    <link rel="canonical" href="https://kingshuk.me"/>
+    <meta property="og:type"        content="website"/>
+    <meta property="og:title"       content="Hi! I'm Shelly Wang"/>
+    <meta property="og:description" content="Personal Website and Portfolio"/>
+    <meta property="og:image"       content="https://raw.githubusercontent.com/YanhaoWw/shellywang.github.io/refs/heads/main/images/bg/main.webp"/>
+    <meta property="og:url"         content="https://kingshuk.me"/>
+
+    <!-- Icons -->
+    <link rel="shortcut icon"       href="favicon.png"/>
+    <link rel="apple-touch-icon"    href="apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72"  href="apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png"/>
+
     <title>Hi! I'm Shelly Wang</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <!-- Analytics (replace with your tag) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=ADDYOURGTAGINFO"></script>
     <script>
-        function gtag(){dataLayer.push(arguments)}
-        window.dataLayer=window.dataLayer||[],
-        gtag("js",new Date),
-        gtag("config","ADDYOURGTAGINFO")
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}  
+      gtag('js', new Date());
+      gtag('config','ADDYOURGTAGINFO');
     </script>
+
+    <!-- Inline tweaks (quick override) -->
     <style>
-        /* 磨砂玻璃效果 */
+        /* ───── Global helpers ───── */
+        :root {
+            --contact-bg-alpha: .30;   /* 背景透明度 */
+            --contact-border-alpha: .70; /* 边框透明度 */
+        }
+
+        /* Frost‑glass util */
         .frosted-glass {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255,255,255,0.85);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 15px;
             padding: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.18);
         }
-        
-        /* 联系信息磨砂效果 */
-        .contact-frosted {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            margin-bottom: 20px;
-        }
-        
-        /* 优化项目卡片样式 */
-        .project-box-inner {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            padding: 25px 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .project-box-inner:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            background: rgba(255, 255, 255, 0.95);
-        }
-        
-        .project-box h5 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-top: 15px;
-            color: #003366;
-        }
-        
-        /* 添加图标增强视觉效果 */
-        .project-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: #003366;
-            transition: all 0.3s ease;
-        }
-        
-        .project-box:hover .project-icon {
-            transform: scale(1.1);
-        }
-        
-        /* 修复电话号码和邮箱显示问题 */
-        .contact-item {
-            white-space: nowrap;
-        }
-        
-        .contact-address h3 {
-            word-break: break-all;
-        }
-        
-        /* 首页文字清晰度优化 */
-        .section-1 .boxed-inner {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 40px;
-            border-radius: 15px;
-        }
-        
-        .section-1 h1 {
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-        }
-        
-        /* 联系页面优化 */
-        .contact-section {
-            padding: 25px;
-        }
-        
-        .contact-section h2, 
-        .contact-section h3,
-        .contact-section h5 {
-            color: #003366 !important;
-        }
-        
-        /* 顶部导航栏联系方式磨砂效果 */
+
+        /* ───── Top contact pill ───── */
         .navbar .contacts {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255,255,255,var(--contact-bg-alpha));
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             border-radius: 30px;
-            padding: 8px 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 22px;
+            border: 2px solid rgba(255,255,255,var(--contact-border-alpha));
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-        
-        .navbar .contact-item a {
-            color: #003366 !important;
-            font-weight: 500;
+        .navbar .contact-item,
+        .navbar .contact-item a { color:#003366 !important; font-weight:500; }
+
+        /* Remove dark overlay on hero */
+        .section-1 .boxed-inner { background:none; padding:40px; border-radius:15px; }
+        .section-1 h1{ text-shadow:0 2px 8px rgba(0,0,0,.7);} 
+
+        /* Project cards */
+        .project-box-inner{background:rgba(255,255,255,.9);border-radius:12px;padding:25px 20px;transition:.3s;box-shadow:0 5px 15px rgba(0,0,0,.05);height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;}
+        .project-box-inner:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(0,0,0,.1);background:rgba(255,255,255,.95);}  
+        .project-box h5{font-size:1.4rem;font-weight:600;margin-top:15px;color:#003366;}  
+        .project-icon{font-size:2.5rem;margin-bottom:15px;color:#003366;transition:.3s;}  
+        .project-box:hover .project-icon{transform:scale(1.1);}  
+
+        /* Mini‑footer pills */
+        .social-list-bottom,
+        .copy-bottom{
+            background:rgba(255,255,255,.8);
+            backdrop-filter:blur(5px);
+            -webkit-backdrop-filter:blur(5px);
+            border-radius:30px;
+            padding:10px 25px;
+            border:1px solid rgba(255,255,255,.2);
+            box-shadow:0 4px 20px rgba(0,0,0,.1);
         }
-        
-        .navbar .contact-item {
-            color: #003366 !important;
-        }
-        
-        /* 页脚磨砂效果 */
-        .social-list-bottom {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border-radius: 30px;
-            padding: 10px 25px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .copy-bottom {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border-radius: 30px;
-            padding: 10px 25px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .copy-bottom, .copy-bottom a {
-            color: #003366 !important;
-        }
+        .copy-bottom, .copy-bottom a{color:#003366 !important;}
     </style>
 </head>
 <body>
-    <div class="loader">
-        <div class="spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
-        </div>
-    </div>
+    <!-- Loader -->
+    <div class="loader"><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></div>
+
     <div class="animsition">
         <div class="click-capture"></div>
+
+        <!-- ───────────── Menu (side / mobile) ───────────── -->
         <div class="menu">
             <span class="close-menu icon-cross2 right-boxed"></span>
             <ul class="menu-list right-boxed">
-                <li data-menuanchor="page1"><a href="#page1" aria-label="Link to Page 1">Home</a></li>
-                <li data-menuanchor="page2"><a href="#page2" aria-label="Link to Page 2">Projects</a></li>
-                <li data-menuanchor="page3"><a href="#page3" aria-label="Link to Page 3">Skills</a></li>
-                <li data-menuanchor="page4"><a href="#page4" aria-label="Link to Page 4">Resume</a></li>
-                <li data-menuanchor="page5"><a href="#page5" aria-label="Link to Page 5">Contact</a></li>
+                <li data-menuanchor="page1"><a href="#page1">Home</a></li>
+                <li data-menuanchor="page2"><a href="#page2">Projects</a></li>
+                <li data-menuanchor="page3"><a href="#page3">Skills</a></li>
+                <li data-menuanchor="page4"><a href="#page4">Resume</a></li>
             </ul>
             <div class="menu-footer right-boxed">
                 <div class="social-list">
-                    <a href="https://www.facebook.com/kingshukkunduu/" class="icon ion-social-facebook" aria-label="Kingshuk's Facebook Profile"></a>
-                    <a href="https://www.instagram.com/kingshuk_kundu/" class="icon ion-social-instagram" aria-label="Kingshuk's Instagram Account"></a>
-                    <a href="https://www.twitter.com/kingshukkunduu/" class="icon ion-social-twitter" aria-label="Kingshuk's Twitter Account"></a>
-                    <a href="https://www.linkedin.com/in/kingshukk/" class="icon ion-social-linkedin" aria-label="Kingshuk's LinkedIn"></a>
-                    <a href="https://github.com/kingshukkundu" class="icon ion-social-github" aria-label="Kingshuk's Github"></a>
+                    <a href="https://www.facebook.com/kingshukkunduu/" class="icon ion-social-facebook"></a>
+                    <a href="https://www.instagram.com/kingshuk_kundu/" class="icon ion-social-instagram"></a>
+                    <a href="https://www.twitter.com/kingshukkunduu/" class="icon ion-social-twitter"></a>
+                    <a href="https://www.linkedin.com/in/kingshukk/" class="icon ion-social-linkedin"></a>
+                    <a href="https://github.com/kingshukkundu"          class="icon ion-social-github"></a>
                 </div>
             </div>
-        </div>
+        </div><!-- /menu -->
+
+        <!-- ───────────── Top navbar ───────────── -->
         <header class="navbar boxed">
             <div class="navbar-bg"></div>
-            <a class="brand" href="https://kingshuk.me/#page1"></a>
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-label="Hamburger Menu">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!-- 顶部导航栏联系方式添加磨砂效果 -->
+            <a class="brand" href="#page1"></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-label="Toggle navigation"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             <div class="contacts d-none d-md-block">
-                <div class="contact-item">+1 510 993 6596</div>
+                <div class="contact-item">+1&nbsp;510&nbsp;993&nbsp;6596</div>
                 <div class="contact-item spacer">/</div>
                 <div class="contact-item"><a href="mailto:yanhao_wang@berkeley.edu">yanhao_wang@berkeley.edu</a></div>
             </div>
         </header>
-        <!-- 页脚版权信息添加磨砂效果 -->
+
+        <!-- ───────────── Footer mini pills ───────────── -->
         <div class="copy-bottom boxed">
-            <div>© Shelly Wang <span id="copyright">
-                <script>document.getElementById("copyright").innerHTML=(new Date).getFullYear()</script>.</span>
-            </div>
+            <div>© Shelly Wang <span id="copyright"></span></div>
         </div>
-        <!-- 页脚社交媒体添加磨砂效果 -->
+        <script>document.getElementById('copyright').textContent = new Date().getFullYear();</script>
+
         <div class="social-list social-list-bottom boxed">
-            <a href="https://www.facebook.com/kingshukkunduu/" class="icon ion-social-facebook" aria-label="Kingshuk's Facebook Profile"></a>
-            <a href="https://www.instagram.com/kingshuk_kundu/" class="icon ion-social-instagram" aria-label="Kingshuk's Instagram Account"></a>
-            <a href="https://www.twitter.com/kingshukkunduu/" class="icon ion-social-twitter" aria-label="Kingshuk's Twitter Account"></a>
-            <a href="https://www.linkedin.com/in/kingshukk/" class="icon ion-social-linkedin" aria-label="Kingshuk's LinkedIn"></a>
-            <a href="https://github.com/kingshukkundu" class="icon ion-social-github" aria-label="Kingshuk's Github"></a>
+            <a href="https://www.facebook.com/kingshukkunduu/" class="icon ion-social-facebook"></a>
+            <a href="https://www.instagram.com/kingshuk_kundu/" class="icon ion-social-instagram"></a>
+            <a href="https://www.twitter.com/kingshukkunduu/" class="icon ion-social-twitter"></a>
+            <a href="https://www.linkedin.com/in/kingshukk/" class="icon ion-social-linkedin"></a>
+            <a href="https://github.com/kingshukkundu"          class="icon ion-social-github"></a>
         </div>
+
+        <!-- ───────────── Pagepiling sections ───────────── -->
         <div class="pagepiling">
-            <!-- Page 1: Home -->
+
+            <!-- Page 1 · Home -->
             <div data-anchor="page1" class="pp-scrollable text-white section section-1">
                 <div class="scroll-wrap">
-                    <div class="section-bg" alt="Kingshuk Kundu standing. Location: Delhi Fort" style="background-image:url(images/bg/main.webp)"></div>
+                    <div class="section-bg" style="background-image:url(images/bg/main.webp)"></div>
                     <div class="scrollable-content">
                         <div class="vertical-centred">
                             <div class="boxed boxed-inner">
                                 <div class="vertical-title d-none d-lg-block"><span>Welcome</span></div>
-                                <div class="boxed">
-                                    <div class="container">
-                                        <div class="intro">
-                                            <div class="row">
-                                                <div class="col-md-12 col-lg-10">
-                                                    <h1 class="title-uppercase"><span class="text-primary">Hello </span>I am<br>
-                                                        <noscript>Shelly Wang, a Developer, Photographer & Consultant</noscript>
-                                                        <span class="typed" data-typed-items="Shelly Wang, a Developer, a Photographer, a Consultant"></span>
-                                                    </h1>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="boxed"><div class="container"><div class="intro"><div class="row"><div class="col-lg-10">
+                                    <h1 class="title-uppercase"><span class="text-primary">Hello </span>I am<br>
+                                        <noscript>Shelly Wang, a Developer, Photographer & Consultant</noscript>
+                                        <span class="typed" data-typed-items="Shelly Wang, a Developer, a Photographer, a Consultant"></span>
+                                    </h1>
+                                </div></div></div></div></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Page 2: Projects -->
+            </div><!-- /page1 -->
+
+            <!-- Page 2 · Projects -->
             <div data-anchor="page2" class="pp-scrollable section section-5">
                 <div class="scroll-wrap">
-                    <div class="bg-changer">
-                        <div class="section-bg" style="background-image:url(images/bg/project.webp)"></div>
-                        <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(255,255,255,0.3);"></div>
-                    </div>
-                    <div class="scrollable-content">
-                        <div class="vertical-centred">
-                            <div class="boxed boxed-inner">
-                                <div class="vertical-title d-none d-lg-block"><span>my works</span></div>
-                                <div class="boxed">
-                                    <div class="container">
-                                        <div class="frosted-glass">
-                                            <div class="intro">
-                                                <div class="row">
-                                                    <div class="col-md-12 text-center">
-                                                        <h2 class="title-uppercase" style="color:#003366; margin-bottom: 30px;">PROJECTS</h2>
-                                                        <div class="row-project-box row">
-                                                            <div class="col-project-box col-sm-6 col-md-4 col-lg-4">
-                                                                <a href="projects/energy.html" class="project-box">
-                                                                    <div class="project-box-inner">
-                                                                        <div class="project-icon">
-                                                                            <i class="fas fa-bolt"></i>
-                                                                        </div>
-                                                                        <h5>Energy</h5>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
+                    <div class="bg-changer"><div class="section-bg" style="background-image:url(images/bg/project.webp)"></div><div style="position:absolute;inset:0;background:rgba(255,255,255,.3);"></div></div>
+                    <div class="scrollable-content"><div class="vertical-centred"><div class="boxed boxed-inner">
+                        <div class="vertical-title d-none d-lg-block"><span>my works</span></div>
+                        <div class="boxed"><div class="container"><div class="frosted-glass"><div class="intro text-center">
+                            <h2 class="title-uppercase" style="color:#003366;margin-bottom:30px;">PROJECTS</h2>
+                            <div class="row row-project-box">
+                                <!-- Energy -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4"><a href="projects/energy.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-bolt"></i></div><h5>Energy</h5></div></a></div>
+                                <!-- Health -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4"><a href="projects/health.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-heartbeat"></i></div><h5>Health</h5></div></a></div>
+                                <!-- Economy -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4"><a href="projects/economy.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-chart-line"></i></div><h5>Local Economy</h5></div></a></div>
+                                <!-- Housing -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4 mt-4 mx-auto"><a href="projects/housing.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-home"></i></div><h5>Housing</h5></div></a></div>
+                            </div><!-- /.row -->
+                        </div></div></div></div></div></div></div>
+                </div><!-- /scroll-wrap -->
+            </div><!-- /page2 -->
 
-                                                            <div class="col-project-box col-sm-6 col-md-4 col-lg-4">
-                                                                <a href="projects/health.html" class="project-box">
-                                                                    <div class="project-box-inner">
-                                                                        <div class="project-icon">
-                                                                            <i class="fas fa-heartbeat"></i>
-                                                                        </div>
-                                                                        <h5>Health</h5>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="col-project-box col-sm-6 col-md-4 col-lg-4">
-                                                                <a href="projects/economy.html" class="project-box">
-                                                                    <div class="project-box-inner">
-                                                                        <div class="project-icon">
-                                                                            <i class="fas fa-chart-line"></i>
-                                                                        </div>
-                                                                        <h5>Local Economy</h5>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="col-project-box col-sm-6 col-md-4 col-lg-4 mt-4 mt-md-0 mx-auto">
-                                                                <a href="projects/housing.html" class="project-box">
-                                                                    <div class="project-box-inner">
-                                                                        <div class="project-icon">
-                                                                            <i class="fas fa-home"></i>
-                                                                        </div>
-                                                                        <h5>Housing</h5>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Page 3: Skills -->
+            <!-- Page 3 · Skills -->
             <div data-anchor="page3" class="pp-scrollable section section-2">
-                <div class="scroll-wrap">
-                    <div class="scrollable-content">
-                        <div class="vertical-centred">
-                            <div class="boxed boxed-inner">
-                                <div class="vertical-title text-white d-none d-lg-block"><span>what I do</span></div>
-                                <div class="boxed">
-                                    <div class="container">
-                                        <div class="intro">
-                                            <div class="row align-items-center">
-                                                <div class="col-xl-7">
-                                                    <div class="experience-box pb-5">
-                                                        <div class="experience-content">
-                                                            <div class="experience-number text-texture" id="exp">
-                                                                <script>document.getElementById("exp").innerHTML=(new Date).getFullYear()-2020</script>
-                                                            </div>
-                                                            <br class="d-block d-sm-none">
-                                                            <div class="experience-info">Years of<br>Professional<br>Experience</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-5">
-                                                    <h2 class="title-uppercase">My Area of <span class="text-primary">Expertise</span></h2>
-                                                    Since my first management consulting internship in 2020, I have been dedicated to tackling complex challenges in healthcare, energy, housing, and public safety from a global development perspective. Over time, I have built experience in strategy analysis, policy evaluation, and financial modeling—particularly within the pharma/biotech and urban well-being domains. I am fluent in English and Chinese, and bring a strong analytical skill set grounded in Python and R, with advanced proficiency in Excel-based modeling.<br><br><br>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="scroll-wrap"><div class="scrollable-content"><div class="vertical-centred"><div class="boxed boxed-inner">
+                    <div class="vertical-title text-white d-none d-lg-block"><span>what I do</span></div>
+                    <div class="boxed"><div class="container"><div class="intro"><div class="row align-items-center">
+                        <div class="col-xl-7"><div class="experience-box pb-5"><div class="experience-content"><div class="experience-number text-texture" id="exp"></div><br class="d-block d-sm-none"><div class="experience-info">Years of<br>Professional<br>Experience</div></div></div></div>
+                        <div class="col-xl-5"><h2 class="title-uppercase">My Area of <span class="text-primary">Expertise</span></h2>
+                            Since my first management consulting internship in 2020, I have been dedicated to tackling complex challenges in healthcare, energy, housing, and public safety from a global development perspective. Over time, I have built experience in strategy analysis, policy evaluation, and financial modeling—particularly within the pharma/biotech and urban well-being domains. I am fluent in English and Chinese, and bring a strong analytical skill set grounded in Python and R, with advanced proficiency in Excel‑based modeling.<br><br><br>
                         </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Page 4: Resume -->
+                    </div></div></div></div></div></div></div>
+                </div><!-- /scroll-wrap -->
+            </div><!-- /page3 -->
+
+            <!-- Page 4 · Resume -->
             <div data-anchor="page4" class="pp-scrollable text-white section section-3">
-                <div class="scroll-wrap">
-                    <div class="section-bg" style="background-image:url(images/bg/resume.webp)"></div>
-                    <div class="scrollable-content">
-                        <div class="vertical-centred">
-                            <div class="boxed boxed-inner">
-                                <div class="vertical-title d-none d-lg-block"><span>Resume</span></div>
-                                <div class="boxed">
-                                    <div class="container">
-                                        <div class="intro">
-                                            <div class="row row-resume">
-                                                <div class="col-md-6">
-                                                    <div class="col-resume">
-                                                        <h4 class="title-uppercase">Education</h4>
-                                                        <div class="resume-content">
-                                                            <div class="resume-inner">
-                                                                <div class="resume-row">
-                                                                    <h6 class="resume-type">Master's in Public Policy</h6>
-                                                                    <p class="resume-study">UC Berkeley University, Berkeley, California</p>
-                                                                    <p class="resume-date text-primary">Aug 2023 - May 2025</p>
-                                                                    <p class="resume-text">Edited for APEC’s public policy journalism team. Advised Marvell Technology on sustainable business strategy. Contributed to statewide gas demand modeling for the California Public Utilities Commission. Evaluated and optimized emergency medical service systems for Alameda County.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="col-resume">
-                                                        <h4 class="title-uppercase">Experience</h4>
-                                                        <div class="resume-content">
-                                                            <div class="resume-inner">
-                                                                <div class="resume-row">
-                                                                    <h6 class="resume-type">Modernizing Gas Utility Financing Intern</h6>
-                                                                    <p class="resume-study">California Public Utilities Commission</p>
-                                                                    <p class="resume-date text-primary">Jul 2024 - Nov 2024</p>
-                                                                    <p class="resume-text">
-                                                                        <ul>
-                                                                            <li>Applied the PG&E model to estimate residential gas rate changes during the transition from gas to electricity.</li>
-                                                                            <li>Forecasted residential rate changes using the units-of-production depreciation method under various scenarios (AAFS 3, AAFS 2.5, CAPB SPS) from 2028 to 2045.</li>
-                                                                            <li>Evaluated multiple scenarios (i.e. business-as-usual, winter/summer off-peak and on-peak) based on total demand assumptions.</li>
-                                                                            <li>Revised the four-year forecast PG&E model into a unified forecasting model covering 2023 to 2045, expanding projections for 2023 to 2028.</li>
-                                                                        </ul>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="resume-row">
-                                                                    <h6 class="resume-type">Individual Researcher</h6>
-                                                                    <p class="resume-study">Pioneer Academics</p>
-                                                                    <p class="resume-date text-primary">Jun 2019 - Aug 2019</p>
-                                                                    <p class="resume-text">Developed an AI that does Market Basket Analysis and diagnoses Breast Cancer from Digitized FNA reports with 99% accuracy</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Page 5: Contact - 所有联系方式添加磨砂背景 -->
-            <div data-anchor="page5" class="pp-scrollable section section-7">
-                <div class="scroll-wrap">
-                    <div class="section-bg" style="background-image:url(images/bg/contact.webp)"></div>
-                    <div class="scrollable-content">
-                        <div class="vertical-centred">
-                            <div class="boxed boxed-inner">
-                                <div class="vertical-title text-white d-none d-lg-block"><span>contact</span></div>
-                                <div class="boxed">
-                                    <div class="container">
-                                        <div class="intro overflow-hidden">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <!-- 左侧联系方式磨砂背景 -->
-                                                    <div class="contact-frosted contact-section">
-                                                        <h2 class="title-uppercase"><span style="color:#003366;">New York</span>, USA</h2>
-                                                        <h5 class="text-muted">Queens, NY 11373</h5>
-                                                        <section class="contact-address">
-                                                            <h3>yanhao_wang@berkeley.edu</h3>
-                                                            <h3><span class="phone">+1 510 993 6596</span></h3>
-                                                            <span>
-                                                                <form action="https://kingshuk.me/Resume_Kingshuk.pdf" method="post" target="_blank">
-                                                                    <button class="dwnldbtn" style="background: #003366; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Download my Resume</button>
-                                                                </form>
-                                                            </span>
-                                                        </section>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <!-- 右侧联系表单磨砂背景 -->
-                                                    <div class="contact-frosted">
-                                                        <div class="contact-info">
-                                                            <form class="js-form" novalidate="novalidate" method="post" action="mail.php">
-                                                                <div class="row">
-                                                                    <div class="form-group col-sm-6">
-                                                                        <input type="text" name="name" id="name" required="" placeholder="Name*" aria-required="true" style="background: rgba(255,255,255,0.8);">
-                                                                    </div>
-                                                                    <div class="form-group col-sm-6">
-                                                                        <input type="email" required="" id="email" name="email" placeholder="Email*" style="background: rgba(255,255,255,0.8);">
-                                                                    </div>
-                                                                    <div class="form-group col-sm-12">
-                                                                        <input type="text" name="subject" id="subject" placeholder="Subject (Optinal)" style="background: rgba(255,255,255,0.8);">
-                                                                    </div>
-                                                                    <div class="form-group col-sm-12">
-                                                                        <textarea name="message" required="" id="message" placeholder="Message*" style="background: rgba(255,255,255,0.8);"></textarea>
-                                                                    </div>
-                                                                    <div class="form-group form-group-message col-sm-12">
-                                                                        <span id="success" class="text-primary">Thank You, your message is successfully sent!</span>
-                                                                        <span id="error" class="text-primary">Sorry, something went wrong</span>
-                                                                    </div>
-                                                                    <div class="col-sm-12">
-                                                                        <button type="submit" class="btn" style="background: #003366; color: white;">Contact me</button>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 添加Font Awesome图标库 -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+                <div class="scroll-wrap"><div class="section-bg" style="background-image:url(images/bg/resume.webp)"></div><div class="scrollable-content"><div class="vertical-centred"><div class="boxed boxed-inner">
+                    <div class="vertical-title d-none d-lg-block"><span>Resume</span></div>
+                    <div class="boxed"><div class="container"><div class="intro"><div class="row row-resume">
+                        <!-- Education -->
+                        <div class="col-md-6"><div class="col-resume"><h4 class="title-uppercase">Education</h4><div class="resume-content"><div class="resume-inner"><div class="resume-row">
+                            <h6 class="resume-type">Master's in Public Policy</h6><p class="resume-study">UC Berkeley, Berkeley, California</p><p class="resume-date text-primary">Aug 2023 – May 2025</p><p class="resume-text">Edited for APEC’s public policy journalism team. Advised Marvell Technology on sustainable business strategy. Contributed to statewide gas demand modeling for the California Public Utilities Commission. Evaluated and optimized emergency medical service systems for Alameda County.</p>
+                        </div></div></div></div></div>
+                        <!-- Experience -->
+                        <div class="col-md-6"><div class="col-resume"><h4 class="title-uppercase">Experience</h4><div class="resume-content"><div class="resume-inner">
+                            <div class="resume-row"><h6 class="resume-type">Modernizing Gas Utility Financing Intern</h6><p class="resume-study">California Public Utilities Commission</p><p class="resume-date text-primary">Jul 2024 – Nov 2024</p><ul class="resume-text"><li>Applied the PG&E model to estimate residential gas rate changes during the transition from gas to electricity.</li><li>Forecasted residential rate changes using units‑of‑production depreciation under various scenarios from 2028 to 2045.</li><li>Evaluated multiple demand scenarios (business‑as‑usual, seasonal peak/off‑peak).</li><li>Revised the four‑year PG&E model into a unified forecasting framework (2023‑2045).</li></ul></div>
+                            <div class="resume-row"><h6 class="resume-type">Individual Researcher</h6><p class="resume-study">Pioneer Academics</p><p class="resume-date text-primary">Jun 2019 – Aug 2019</p><p class="resume-text">Developed an AI that performs Market Basket Analysis and diagnoses Breast Cancer from digitized FNA reports with 99% accuracy.</p></div>
+                        </div></div></div></div><!-- /.col -->
+                    </div></div></div></div></div></div></div>
+                </div><!-- /scroll-wrap -->
+            </div><!-- /page4 -->
+
+        </div><!-- /pagepiling -->
+
+        <!-- Scripts -->
         <script src="js/jquery.min.js"></script>
         <script src="js/merged.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&amp;display=swap" rel="stylesheet">
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org/",
-            "@type": "Person",
-            "name": "Shelly Wang",
-            "gender": "Female",
-            "url": "https://yanhaoww.github.io/shellywang.github.io",
-            "image": "https://raw.githubusercontent.com/YanhaoWw/shellywang.github.io/refs/heads/main/images/bg/main.webp",
-            "sameAs": [ 
-                "https://www.linkedin.com/in/selly-wang", 
-                "https://github.com/shellywang"
-            ],
-            "jobTitle": "Consultant",
-            "Study For": {
-                "@type": "Organization",
-                "name": "UC Berkeley"
-            },
-            "alumniOf": "UC Berkeley",
-            "email": "yanhao_wang@berkeley.edu",
-            "birthPlace": "China"
-        }
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+        <script>
+            // Dynamic years of experience
+            document.addEventListener('DOMContentLoaded', function(){ document.getElementById('exp').textContent = new Date().getFullYear() - 2020; });
         </script>
-    </div>
+
+        <!-- Structured Data -->
+        <script type="application/ld+json">{
+            "@context":"https://schema.org/",
+            "@type":"Person",
+            "name":"Shelly Wang",
+            "gender":"Female",
+            "url":"https://yanhaoww.github.io/shellywang.github.io",
+            "image":"https://raw.githubusercontent.com/YanhaoWw/shellywang.github.io/refs/heads/main/images/bg/main.webp",
+            "sameAs":["https://www.linkedin.com/in/selly-wang","https://github.com/shellywang"],
+            "jobTitle":"Consultant",
+            "worksFor":{"@type":"Organization","name":"UC Berkeley"},
+            "alumniOf":"UC Berkeley",
+            "email":"yanhao_wang@berkeley.edu"
+        }</script>
+
+    </div><!-- /.animsition -->
 </body>
 </html>
