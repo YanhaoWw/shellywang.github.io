@@ -1,102 +1,260 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Personal Website | Deck Design · Coding Projects · Freelance Photography" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Personal Website and Portfolio | Graduate student and researcher at UC Berkeley | Photographer | Consultant"/>
 
-  <title>Shelly Wang | Work</title>
+    <!-- Canonical & Open‑Graph -->
+    <link rel="canonical" href="https://kingshuk.me"/>
+    <meta property="og:type"        content="website"/>
+    <meta property="og:title"       content="Hi! I'm Shelly Wang"/>
+    <meta property="og:description" content="Personal Website and Portfolio"/>
+    <meta property="og:image"       content="https://raw.githubusercontent.com/YanhaoWw/shellywang.github.io/refs/heads/main/images/bg/main.webp"/>
+    <meta property="og:url"         content="https://kingshuk.me"/>
 
-  <!-- ───── External libs (CSS) ───── -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+    <!-- Icons -->
+    <link rel="shortcut icon"       href="favicon.png"/>
+    <link rel="apple-touch-icon"    href="apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72"  href="apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png"/>
 
-  <!-- ───── Quick overrides ───── -->
-  <style>
-    :root {
-      --primary:#003366;
-    }
-    .frosted-glass{background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-radius:15px;padding:30px;box-shadow:0 8px 32px rgba(0,0,0,.08);} 
-    .project-box-inner{background:rgba(255,255,255,.9);border-radius:12px;padding:25px 20px;transition:.3s;box-shadow:0 5px 15px rgba(0,0,0,.05);height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
-    .project-box-inner:hover{transform:translateY(-6px);box-shadow:0 10px 25px rgba(0,0,0,.1)}
-    .project-icon{font-size:2.5rem;color:var(--primary);margin-bottom:15px;transition:.3s}
-    .project-box:hover .project-icon{transform:scale(1.1)}
-    .project-box h5{color:var(--primary);font-size:1.35rem;font-weight:600;margin:0}
-  </style>
+    <title>Hi! I'm Shelly Wang</title>
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <!-- Analytics (replace with your tag) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=ADDYOURGTAGINFO"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}  
+      gtag('js', new Date());
+      gtag('config','ADDYOURGTAGINFO');
+    </script>
+
+    <!-- Inline tweaks (quick override) -->
+    <style>
+        /* ───── Global helpers ───── */
+        :root {
+            --contact-bg-alpha: .30;   /* 背景透明度 */
+            --contact-border-alpha: .70; /* 边框透明度 */
+        }
+
+        /* Frost‑glass util */
+        .frosted-glass {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+
+        /* ───── Top contact pill ───── */
+        .navbar .contacts {
+            background: rgba(255,255,255,var(--contact-bg-alpha));
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 30px;
+            padding: 8px 22px;
+            border: 2px solid rgba(255,255,255,var(--contact-border-alpha));
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .navbar .contact-item,
+        .navbar .contact-item a { color:#003366 !important; font-weight:500; }
+
+        /* Remove dark overlay on hero */
+        .section-1 .boxed-inner { background:none; padding:40px; border-radius:15px; }
+        .section-1 h1{ text-shadow:0 2px 8px rgba(0,0,0,.7);} 
+
+        /* Project cards */
+        .project-box-inner{background:rgba(255,255,255,.9);border-radius:12px;padding:25px 20px;transition:.3s;box-shadow:0 5px 15px rgba(0,0,0,.05);height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;}
+        .project-box-inner:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(0,0,0,.1);background:rgba(255,255,255,.95);}  
+        .project-box h5{font-size:1.4rem;font-weight:600;margin-top:15px;color:#003366;}  
+        .project-icon{font-size:2.5rem;margin-bottom:15px;color:#003366;transition:.3s;}  
+        .project-box:hover .project-icon{transform:scale(1.1);}  
+
+        /* Mini‑footer pills */
+        .social-list-bottom,
+        .copy-bottom{
+            background:rgba(255,255,255,.8);
+            backdrop-filter:blur(5px);
+            -webkit-backdrop-filter:blur(5px);
+            border-radius:30px;
+            padding:10px 25px;
+            border:1px solid rgba(255,255,255,.2);
+            box-shadow:0 4px 20px rgba(0,0,0,.1);
+        }
+        .copy-bottom, .copy-bottom a{color:#003366 !important;}
+    </style>
 </head>
 <body>
-  <header class="navbar navbar-expand-md py-3">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="#page1">Shelly Wang</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-          <li class="nav-item"><a class="nav-link" href="#page1">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#page2">Work</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
+    <!-- Loader -->
+    <div class="loader"><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></div>
 
-  <!-- ───── Page 1 · Home ───── -->
-  <section id="page1" class="py-5 text-center" style="background:url(images/bg/main.webp) center/cover no-repeat;min-height:60vh;color:#fff;">
-    <div class="container py-5">
-      <h1 class="display-4 fw-bold mb-3">Hello, I’m <span class="text-warning">Shelly Wang</span></h1>
-      <p class="lead">Deck‑design consultant · Coder · Freelance photographer</p>
-    </div>
-  </section>
+    <div class="animsition">
+        <div class="click-capture"></div>
 
-  <!-- ───── Page 2 · Work ───── -->
-  <section id="page2" class="py-5" style="background:url(images/bg/project.webp) center/cover no-repeat;">
-    <div class="container">
-      <div class="frosted-glass mx-auto" style="max-width:1000px;">
-        <h2 class="text-center mb-4" style="color:var(--primary);">WORK</h2>
-        <div class="row g-4 justify-content-center">
-          <!-- Deck Design -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <a href="projects/deck.html" class="project-box text-decoration-none">
-              <div class="project-box-inner">
-                <div class="project-icon"><i class="fas fa-layer-group"></i></div>
-                <h5>Deck Design</h5>
-              </div>
-            </a>
-          </div>
-          <!-- Coding Projects -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <a href="projects/coding.html" class="project-box text-decoration-none">
-              <div class="project-box-inner">
-                <div class="project-icon"><i class="fas fa-code"></i></div>
-                <h5>Coding Projects</h5>
-              </div>
-            </a>
-          </div>
-          <!-- Photography -->
-          <div class="col-12 col-sm-6 col-lg-4">
-            <a href="projects/photo.html" class="project-box text-decoration-none">
-              <div class="project-box-inner">
-                <div class="project-icon"><i class="fas fa-camera"></i></div>
-                <h5>Photography</h5>
-              </div>
-            </a>
-          </div>
+        <!-- ───────────── Menu (side / mobile) ───────────── -->
+        <div class="menu">
+            <span class="close-menu icon-cross2 right-boxed"></span>
+            <ul class="menu-list right-boxed">
+                <li data-menuanchor="page1"><a href="#page1">Home</a></li>
+                <li data-menuanchor="page2"><a href="#page2">Projects</a></li>
+                <li data-menuanchor="page3"><a href="#page3">Skills</a></li>
+                <li data-menuanchor="page4"><a href="#page4">Resume</a></li>
+            </ul>
+            <div class="menu-footer right-boxed">
+                <div class="social-list">
+                    <a href="https://www.facebook.com/kingshukkunduu/" class="icon ion-social-facebook"></a>
+                    <a href="https://www.instagram.com/kingshuk_kundu/" class="icon ion-social-instagram"></a>
+                    <a href="https://www.twitter.com/kingshukkunduu/" class="icon ion-social-twitter"></a>
+                    <a href="https://www.linkedin.com/in/kingshukk/" class="icon ion-social-linkedin"></a>
+                    <a href="https://github.com/kingshukkundu"          class="icon ion-social-github"></a>
+                </div>
+            </div>
+        </div><!-- /menu -->
+
+        <!-- ───────────── Top navbar ───────────── -->
+        <header class="navbar boxed">
+            <div class="navbar-bg"></div>
+            <a class="brand" href="#page1"></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-label="Toggle navigation"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            <div class="contacts d-none d-md-block">
+                <div class="contact-item">+1&nbsp;510&nbsp;993&nbsp;6596</div>
+                <div class="contact-item spacer">/</div>
+                <div class="contact-item"><a href="mailto:yanhao_wang@berkeley.edu">yanhao_wang@berkeley.edu</a></div>
+            </div>
+        </header>
+
+        <!-- ───────────── Footer mini pills ───────────── -->
+        <div class="copy-bottom boxed">
+            <div>© Shelly Wang <span id="copyright"></span></div>
         </div>
-      </div>
-    </div>
-  </section>
+        <script>document.getElementById('copyright').textContent = new Date().getFullYear();</script>
 
-  <!-- ───── Footer ───── -->
-  <footer class="py-4 text-center bg-light">
-    <div class="container small">© <span id="year"></span> Shelly Wang · All rights reserved</div>
-  </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+        <div class="social-list social-list-bottom boxed">
+            <a href="https://www.facebook.com/kingshukkunduu/" class="icon ion-social-facebook"></a>
+            <a href="https://www.instagram.com/kingshuk_kundu/" class="icon ion-social-instagram"></a>
+            <a href="https://www.twitter.com/kingshukkunduu/" class="icon ion-social-twitter"></a>
+            <a href="https://www.linkedin.com/in/kingshukk/" class="icon ion-social-linkedin"></a>
+            <a href="https://github.com/kingshukkundu"          class="icon ion-social-github"></a>
+        </div>
 
-  <!-- ───── Scripts ───── -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+        <!-- ───────────── Pagepiling sections ───────────── -->
+        <div class="pagepiling">
+
+            <!-- Page 1 · Home -->
+            <div data-anchor="page1" class="pp-scrollable text-white section section-1">
+                <div class="scroll-wrap">
+                    <div class="section-bg" style="background-image:url(images/bg/main.webp)"></div>
+                    <div class="scrollable-content">
+                        <div class="vertical-centred">
+                            <div class="boxed boxed-inner">
+                                <div class="vertical-title d-none d-lg-block"><span>Welcome</span></div>
+                                <div class="boxed"><div class="container"><div class="intro"><div class="row"><div class="col-lg-10">
+                                    <h1 class="title-uppercase"><span class="text-primary">Hello </span>I am<br>
+                                        <noscript>Shelly Wang, a Developer, Photographer & Consultant</noscript>
+                                        <span class="typed" data-typed-items="Shelly Wang, a Developer, a Photographer, a Consultant"></span>
+                                    </h1>
+                                </div></div></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /page1 -->
+
+            <!-- Page 2 · Projects -->
+            <div data-anchor="page2" class="pp-scrollable section section-5">
+                <div class="scroll-wrap">
+                    <div class="bg-changer"><div class="section-bg" style="background-image:url(images/bg/project.webp)"></div><div style="position:absolute;inset:0;background:rgba(255,255,255,.3);"></div></div>
+                    <div class="scrollable-content"><div class="vertical-centred"><div class="boxed boxed-inner">
+                        <div class="vertical-title d-none d-lg-block"><span>my works</span></div>
+                        <div class="boxed"><div class="container"><div class="frosted-glass"><div class="intro text-center">
+                            <h2 class="title-uppercase" style="color:#003366;margin-bottom:30px;">PROJECTS</h2>
+                            <div class="row row-project-box">
+                                <!-- Energy -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4"><a href="projects/energy.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-bolt"></i></div><h5>Energy</h5></div></a></div>
+                                <!-- Health -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4"><a href="projects/health.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-heartbeat"></i></div><h5>Health</h5></div></a></div>
+                                <!-- Economy -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4"><a href="projects/economy.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-chart-line"></i></div><h5>Local Economy</h5></div></a></div>
+                                <!-- Housing -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4 mt-4 mx-auto"><a href="projects/housing.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-home"></i></div><h5>Housing</h5></div></a></div>
+                            </div><!-- /.row -->
+                        </div></div></div></div></div></div></div>
+                </div><!-- /scroll-wrap -->
+            </div><!-- /page2 -->
+
+            <!-- Page 3 · Skills -->
+            <div data-anchor="page3" class="pp-scrollable section section-2">
+                <div class="scroll-wrap"><div class="scrollable-content"><div class="vertical-centred"><div class="boxed boxed-inner">
+                    <div class="vertical-title text-white d-none d-lg-block"><span>what I do</span></div>
+                    <div class="boxed"><div class="container"><div class="intro"><div class="row align-items-center">
+                        <div class="col-xl-7"><div class="experience-box pb-5"><div class="experience-content"><div class="experience-number text-texture" id="exp"></div><br class="d-block d-sm-none"><div class="experience-info">Years of<br>Professional<br>Experience</div></div></div></div>
+                        <div class="col-xl-5"><h2 class="title-uppercase">My Area of <span class="text-primary">Expertise</span></h2>
+                            Since my first management consulting internship in 2020, I have been dedicated to tackling complex challenges in healthcare, energy, housing, and public safety from a global development perspective. Over time, I have built experience in strategy analysis, policy evaluation, and financial modeling—particularly within the pharma/biotech and urban well-being domains. I am fluent in English and Chinese, and bring a strong analytical skill set grounded in Python and R, with advanced proficiency in Excel‑based modeling.<br><br><br>
+                        </div>
+                    </div></div></div></div></div></div></div>
+                </div><!-- /scroll-wrap -->
+            </div><!-- /page3 -->
+
+            <!-- Page 4 · Resume -->
+            <div data-anchor="page4" class="pp-scrollable text-white section section-3">
+                <div class="scroll-wrap"><div class="section-bg" style="background-image:url(images/bg/resume.webp)"></div><div class="scrollable-content"><div class="vertical-centred"><div class="boxed boxed-inner">
+                    <div class="vertical-title d-none d-lg-block"><span>Resume</span></div>
+                    <div class="boxed"><div class="container"><div class="intro"><div class="row row-resume">
+                        <!-- Education -->
+                        <div class="col-md-6"><div class="col-resume"><h4 class="title-uppercase">Education</h4><div class="resume-content"><div class="resume-inner"><div class="resume-row">
+                            <h6 class="resume-type">Master's in Public Policy</h6><p class="resume-study">UC Berkeley, Berkeley, California</p><p class="resume-date text-primary">Aug 2023 – May 2025</p><p class="resume-text">Edited for APEC’s public policy journalism team. Advised Marvell Technology on sustainable business strategy. Contributed to statewide gas demand modeling for the California Public Utilities Commission. Evaluated and optimized emergency medical service systems for Alameda County.</p>
+                        </div></div></div></div></div>
+                        <!-- Experience -->
+                        <div class="col-md-6"><div class="col-resume"><h4 class="title-uppercase">Experience</h4><div class="resume-content"><div class="resume-inner">
+                            <div class="resume-row"><h6 class="resume-type">Modernizing Gas Utility Financing Intern</h6><p class="resume-study">California Public Utilities Commission</p><p class="resume-date text-primary">Jul 2024 – Nov 2024</p><ul class="resume-text"><li>Applied the PG&E model to estimate residential gas rate changes during the transition from gas to electricity.</li><li>Forecasted residential rate changes using units‑of‑production depreciation under various scenarios from 2028 to 2045.</li><li>Evaluated multiple demand scenarios (business‑as‑usual, seasonal peak/off‑peak).</li><li>Revised the four‑year PG&E model into a unified forecasting framework (2023‑2045).</li></ul></div>
+                            <div class="resume-row"><h6 class="resume-type">Individual Researcher</h6><p class="resume-study">Pioneer Academics</p><p class="resume-date text-primary">Jun 2019 – Aug 2019</p><p class="resume-text">Developed an AI that performs Market Basket Analysis and diagnoses Breast Cancer from digitized FNA reports with 99% accuracy.</p></div>
+                        </div></div></div></div><!-- /.col -->
+                    </div></div></div></div></div></div></div>
+                </div><!-- /scroll-wrap -->
+            </div><!-- /page4 -->
+
+        </div><!-- /pagepiling -->
+
+        <!-- Scripts -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/merged.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+        <script>
+            // Dynamic years of experience
+            document.addEventListener('DOMContentLoaded', function(){ document.getElementById('exp').textContent = new Date().getFullYear() - 2020; });
+        </script>
+
+        <!-- Structured Data -->
+        <script type="application/ld+json">{
+            "@context":"https://schema.org/",
+            "@type":"Person",
+            "name":"Shelly Wang",
+            "gender":"Female",
+            "url":"https://yanhaoww.github.io/shellywang.github.io",
+            "image":"https://raw.githubusercontent.com/YanhaoWw/shellywang.github.io/refs/heads/main/images/bg/main.webp",
+            "sameAs":["https://www.linkedin.com/in/selly-wang","https://github.com/shellywang"],
+            "jobTitle":"Consultant",
+            "worksFor":{"@type":"Organization","name":"UC Berkeley"},
+            "alumniOf":"UC Berkeley",
+            "email":"yanhao_wang@berkeley.edu"
+        }</script>
+
+    </div><!-- /.animsition -->
 </body>
 </html>
