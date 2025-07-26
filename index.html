@@ -267,33 +267,42 @@
         </div>
     </div>
 </div>
-            <!-- Page 3 · Resume -->
+          <!-- Page 3 · Resume -->
 <div data-anchor="page3" class="pp-scrollable section section-3">
     <div class="scroll-wrap">
         <div class="section-bg" style="background-image:url(images/bg/resume.webp)"></div>
         <div class="scrollable-content">
             <div class="vertical-centred">
-                <!-- 修改1：移除text-white类，避免全局白色文本 -->
-                <div class="boxed boxed-inner bg-light"> <!-- 添加浅色背景层 -->
+                <div class="boxed boxed-inner bg-light">
                     <div class="vertical-title d-none d-lg-block"><span>Resume</span></div>
                     <div class="boxed">
                         <div class="container">
+                            <!-- 联系方式模块 -->
+                            <div class="resume-header text-center mb-4">
+                                <div class="resume-contact">
+                                    <span class="phone">+1 510 993 6596</span>
+                                    <span class="divider">|</span>
+                                    <a href="mailto:yanhao_wang@berkeley.edu" class="email">yanhao_wang@berkeley.edu</a>
+                                </div>
+                            </div>
+                            
                             <div class="intro">
                                 <div class="row row-resume">
-                                    
                                     <!-- Education Column -->
                                     <div class="col-md-6">
                                         <div class="col-resume">
-                                            <h4 class="title-uppercase text-dark">Education</h4> <!-- 强制深色标题 -->
+                                            <h4 class="title-uppercase text-dark">Education</h4>
                                             <div class="resume-content">
                                                 <div class="resume-inner">
                                                     <div class="resume-row">
-                                                        <h6 class="resume-type text-navy">Master’s in Public Policy</h6> <!-- 自定义海军蓝 -->
+                                                        <h6 class="resume-type text-navy">Master’s in Public Policy</h6>
                                                         <p class="resume-study text-dark">UC Berkeley, California</p>
                                                         <p class="resume-date text-primary">Aug 2023 – May 2025</p>
-                                                        <ul class="resume-items"> <!-- 独立列表样式 -->
+                                                        <ul class="resume-items">
                                                             <li>Edited for APEC’s public policy journalism team</li>
                                                             <li>Advised Marvell Technology on sustainable strategy</li>
+                                                            <li>Contributed to statewide gas demand modeling for CPUC</li>
+                                                            <li>Optimized EMS systems for Alameda County</li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -313,13 +322,29 @@
                                                         <ul class="resume-items">
                                                             <li>Mapped EMT data using <strong>ArcGIS/Python</strong></li>
                                                             <li>Reduced response times by 23% in critical zones</li>
+                                                            <li>Proposed decentralized recruitment strategies</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="resume-row">
+                                                        <h6 class="resume-type text-navy">Product Strategy Consultant</h6>
+                                                        <p class="resume-meta text-dark">Marvell Technology, Inc. • Aug 2024 – Dec 2024</p>
+                                                        <ul class="resume-items">
+                                                            <li>Analyzed climate disclosures from 6 industry leaders</li>
+                                                            <li>Developed go-to-market strategies for executives</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="resume-row">
+                                                        <h6 class="resume-type text-navy">Gas Utility Financing Intern</h6>
+                                                        <p class="resume-meta text-dark">California Public Utilities Commission • July 2024 – Nov 2024</p>
+                                                        <ul class="resume-items">
+                                                            <li>Extended PG&E's forecasting model to 2045</li>
+                                                            <li>Applied units-of-production depreciation method</li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    
                                 </div>
                             </div>
                         </div>
@@ -329,32 +354,67 @@
         </div>
     </div>
 </div>
-        <!-- Scripts -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/merged.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
-        <script>
-            // Dynamic years of experience
-            document.addEventListener('DOMContentLoaded', function(){ 
-                document.getElementById('copyright').textContent = new Date().getFullYear();
-            });
-        </script>
 
-        <!-- Structured Data -->
-        <script type="application/ld+json">{
-            "@context":"https://schema.org/",
-            "@type":"Person",
-            "name":"Shelly Wang",
-            "gender":"Female",
-            "url":"https://yanhaoww.github.io/shellywang.github.io",
-            "image":"https://raw.githubusercontent.com/YanhaoWw/shellywang.github.io/refs/heads/main/images/bg/main.webp",
-            "sameAs":["https://www.linkedin.com/in/selly-wang","https://github.com/shellywang"],
-            "jobTitle":"Consultant",
-            "worksFor":{"@type":"Organization","name":"UC Berkeley"},
-            "alumniOf":"UC Berkeley",
-            "email":"yanhao_wang@berkeley.edu"
-        }</script>
+<style>
+/* 简历专用样式 */
+.section-3 {
+    --resume-text-color: #222;
+    --resume-accent: #003366;
+    --resume-bg: rgba(255, 245, 250, 0.95);
+}
 
-    </div><!-- /.animsition -->
-</body>
-</html>
+.section-3 .boxed-inner {
+    background: var(--resume-bg) !important;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+
+/* 联系方式样式 */
+.resume-header {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+.resume-contact {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.resume-contact .phone {
+    color: var(--resume-accent);
+}
+.resume-contact .divider {
+    margin: 0 12px;
+    color: #999;
+}
+.resume-contact .email {
+    color: #0066cc;
+    text-decoration: none;
+}
+.resume-contact .email:hover {
+    text-decoration: underline;
+}
+
+/* 正文样式 */
+.section-3 .text-dark,
+.section-3 .resume-items,
+.section-3 .resume-meta {
+    color: var(--resume-text-color) !important;
+}
+.section-3 .resume-type {
+    font-size: 1.25rem;
+    color: var(--resume-accent) !important;
+    margin-bottom: 0.5rem;
+}
+.section-3 .resume-items li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+.section-3 .resume-items li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--resume-accent);
+    font-weight: bold;
+}
+</style>
