@@ -95,27 +95,8 @@
         }
         .copy-bottom, .copy-bottom a{color:#003366 !important;}
         
-        /* Added styles for project cards */
-        .frosted-card {
-            background: rgba(255,255,255,0.85) !important;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.18);
-            color: #000 !important;
-        }
-        .pl-0 { padding-left: 0 !important; }
-        .pr-0 { padding-right: 0 !important; }
-        .text-dark { color: #212529 !important; }
-        .text-secondary { color: #6c757d !important; }
-        @media (min-width: 768px) {
-            .col-md-6.pr-0 {
-                margin-left: auto;
-                padding-right: 15px;
-            }
-            .col-md-6.pl-0 {
-                padding-left: 15px;
-            }
-        }
+        /* Added styles for resume text */
+        .resume-text.text-dark { color: #212529 !important; }
     </style>
 </head>
 <body>
@@ -131,8 +112,7 @@
             <ul class="menu-list right-boxed">
                 <li data-menuanchor="page1"><a href="#page1">Home</a></li>
                 <li data-menuanchor="page2"><a href="#page2">Projects</a></li>
-                <!-- Removed Skills menu item -->
-                <li data-menuanchor="page3"><a href="#page3">Resume</a></li> <!-- Changed from page4 to page3 -->
+                <li data-menuanchor="page3"><a href="#page3">Resume</a></li>
             </ul>
             <div class="menu-footer right-boxed">
                 <div class="social-list">
@@ -194,154 +174,92 @@
                 </div>
             </div><!-- /page1 -->
 
-            <!-- Page 2 · Projects -->
+            <!-- Page 2 · Projects (恢复原始设计) -->
             <div data-anchor="page2" class="pp-scrollable section section-5">
                 <div class="scroll-wrap">
-                    <div class="bg-changer">
-                        <div class="section-bg" style="background-image:url(images/bg/project.webp)"></div>
-                        <div style="position:absolute;inset:0;background:rgba(255,255,255,.3);"></div>
-                    </div>
-                    <div class="scrollable-content">
-                        <div class="vertical-centred">
-                            <div class="boxed boxed-inner">
-                                <div class="vertical-title d-none d-lg-block"><span>my works</span></div>
-                                <div class="boxed">
-                                    <div class="container">
-                                        <div class="frosted-glass">
-                                            <h2 class="title-uppercase text-center" style="color:#003366;margin-bottom:40px;">PROJECTS</h2>
-                                            <div class="row">
-
-                                                <!-- Project cards go here (same as before) -->
-                                                <div class="col-md-6 col-lg-4 mb-4">
-                                                    <a href="projects/energy.html" class="project-card">
-                                                        <div class="project-card-inner frosted-card">
-                                                            <h3 class="text-dark">Energy Demand Forecasting</h3>
-                                                            <div class="project-tools text-secondary">
-                                                                <p><strong>Tools:</strong> Excel</p>
-                                                            </div>
-                                                            <p class="project-desc text-dark">Extended utility financing modeling from 4-year to 22-year forecasts (2023-2045).</p>
-                                                        </div>
-                                                    </a>
-                                                </div>
-
-                                                <!-- ... other project cards ... -->
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <div class="bg-changer"><div class="section-bg" style="background-image:url(images/bg/project.webp)"></div><div style="position:absolute;inset:0;background:rgba(255,255,255,.3);"></div></div>
+                    <div class="scrollable-content"><div class="vertical-centred"><div class="boxed boxed-inner">
+                        <div class="vertical-title d-none d-lg-block"><span>my works</span></div>
+                        <div class="boxed"><div class="container"><div class="frosted-glass"><div class="intro text-center">
+                            <h2 class="title-uppercase" style="color:#003366;margin-bottom:30px;">PROJECTS</h2>
+                            <div class="row row-project-box">
+                                <!-- Energy -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4"><a href="projects/energy.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-bolt"></i></div><h5>Energy</h5></div></a></div>
+                                <!-- Health -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4"><a href="projects/health.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-heartbeat"></i></div><h5>Health</h5></div></a></div>
+                                <!-- Economy -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4"><a href="projects/economy.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-chart-line"></i></div><h5>Local Economy</h5></div></a></div>
+                                <!-- Housing -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4 mt-4 mx-auto"><a href="projects/housing.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-home"></i></div><h5>Housing</h5></div></a></div>
+                            </div><!-- /.row -->
+                        </div></div></div></div></div></div></div>
+                </div><!-- /scroll-wrap -->
             </div><!-- /page2 -->
 
-           <!-- Page 3 · Resume -->
-<div data-anchor="page3" class="pp-scrollable text-white section section-3">
-    <div class="scroll-wrap">
-        <div class="section-bg" style="background-image:url(images/bg/resume.webp)"></div>
-        <div class="scrollable-content">
-            <div class="vertical-centred">
-                <div class="boxed boxed-inner">
+            <!-- Page 3 · Resume (保持您要求的内容修改) -->
+            <div data-anchor="page3" class="pp-scrollable text-white section section-3">
+                <div class="scroll-wrap"><div class="section-bg" style="background-image:url(images/bg/resume.webp)"></div><div class="scrollable-content"><div class="vertical-centred"><div class="boxed boxed-inner">
                     <div class="vertical-title d-none d-lg-block"><span>Resume</span></div>
-                    <div class="boxed">
-                        <div class="container">
-                            <div class="intro" style="font-size: 1.1rem;">
-                                <div class="row row-resume">
-                                    <!-- Education -->
-                                    <div class="col-md-6">
-                                        <div class="col-resume">
-                                            <h4 class="title-uppercase" style="font-size: 1.8rem;">Education</h4>
-                                            <div class="resume-content">
-                                                <div class="resume-inner">
-                                                    <div class="resume-row" style="margin-bottom: 30px;">
-                                                        <h6 class="resume-type" style="font-size: 1.4rem;">Master's in Public Policy</h6>
-                                                        <p class="resume-study" style="font-size: 1.2rem;">UC Berkeley, Berkeley, California</p>
-                                                        <p class="resume-date text-primary" style="font-size: 1.1rem;">Aug 2023 – May 2025</p>
-                                                        <p class="resume-text text-dark" style="font-size: 1.1rem;">
-                                                            Edited for APEC's public policy journalism team. Advised Marvell Technology on sustainable business strategy. 
-                                                            Contributed to statewide gas demand modeling for the California Public Utilities Commission. 
-                                                            Evaluated and optimized emergency medical service systems for Alameda County.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Experience -->
-                                    <div class="col-md-6">
-                                        <div class="col-resume">
-                                            <h4 class="title-uppercase" style="font-size: 1.8rem;">Professional Profile</h4>
-                                            <div class="resume-content">
-                                                <div class="resume-inner">
-                                                    <div class="resume-row" style="margin-bottom: 30px;">
-                                                        <p class="resume-text text-dark" style="font-size: 1.1rem; line-height: 1.7;">
-                                                            <strong>Strategic Consultant & Policy Analyst</strong> with 5+ years of combined experience in management consulting and venture capital. 
-                                                            Proven expertise in developing data-driven strategies for Fortune 500 companies and public sector organizations. 
-                                                            Specialized in translating complex technical analyses into compelling executive presentations and client-facing materials.
-                                                        </p>
-                                                        <p class="resume-text text-dark" style="font-size: 1.1rem; line-height: 1.7;">
-                                                            <strong>Core Competencies:</strong><br>
-                                                            • Professional Deck Design & Data Visualization<br>
-                                                            • Client Relationship Management<br>
-                                                            • Financial Modeling & Policy Analysis<br>
-                                                            • Cross-functional Team Leadership<br>
-                                                            • Stakeholder Engagement
-                                                        </p>
-                                                        <p class="resume-text text-dark" style="font-size: 1.1rem; line-height: 1.7;">
-                                                            <strong>Key Achievements:</strong><br>
-                                                            • Developed climate action plans for semiconductor industry leaders<br>
-                                                            • Designed financing mechanisms for global health initiatives<br>
-                                                            • Led enterprise surveys impacting economic policy<br>
-                                                            • Created investor presentations securing $15M+ in funding
-                                                        </p>
-                                                    </div>
-                                                    
-                                                    <!-- Reader, UC Berkeley -->
-                                                    <div class="resume-row" style="margin-bottom: 30px;">
-                                                        <h6 class="resume-type" style="font-size: 1.4rem;">Reader, UC Berkeley</h6>
-                                                        <p class="resume-date text-primary" style="font-size: 1.1rem;">July 2024 - Present</p>
-                                                        <ul class="resume-text text-dark" style="font-size: 1.1rem;">
-                                                            <li>Assisted in Course Planning, and graded assignments</li>
-                                                            <li>Summer Class: Industrial-Organizational Psychology</li>
-                                                            <li>Fall Class: Text and Data Media History</li>
-                                                        </ul>
-                                                    </div>
-                                                    
-                                                    <!-- Class-Based Consultant, Marvell -->
-                                                    <div class="resume-row" style="margin-bottom: 30px;">
-                                                        <h6 class="resume-type" style="font-size: 1.4rem;">Class-Based Consultant, Marvell</h6>
-                                                        <p class="resume-date text-primary" style="font-size: 1.1rem;">Sep 2024 - Present</p>
-                                                        <ul class="resume-text text-dark" style="font-size: 1.1rem;">
-                                                            <li>Conducted strategy and developed sustainable business solutions to achieve 2035 carbon reduction goals</li>
-                                                            <li>Developed climate action and transition plans for internal consumers</li>
-                                                            <li>Benchmarked peer companies and analyzed consumer structures to support emission reduction efforts</li>
-                                                        </ul>
-                                                    </div>
-                                                    
-                                                    <!-- Consultant Assistance, A.T. Kearney -->
-                                                    <div class="resume-row">
-                                                        <h6 class="resume-type" style="font-size: 1.4rem;">Consultant Assistance, A.T. Kearney</h6>
-                                                        <p class="resume-date text-primary" style="font-size: 1.1rem;">May 2023 - Jun 2023</p>
-                                                        <ul class="resume-text text-dark" style="font-size: 1.1rem;">
-                                                            <li>Set market strategy for Singapore cold medical firm by screening 11+ key factors</li>
-                                                            <li>Gathered data from 50 global logistics companies, summarizing key features</li>
-                                                            <li>Aligned business types with client needs in vaccine transportation sector</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="boxed"><div class="container"><div class="intro"><div class="row row-resume">
+                        <!-- Education -->
+                        <div class="col-md-6"><div class="col-resume"><h4 class="title-uppercase">Education</h4><div class="resume-content"><div class="resume-inner"><div class="resume-row">
+                            <h6 class="resume-type">Master's in Public Policy</h6><p class="resume-study">UC Berkeley, Berkeley, California</p><p class="resume-date text-primary">Aug 2023 – May 2025</p><p class="resume-text text-dark">Edited for APEC's public policy journalism team. Advised Marvell Technology on sustainable business strategy. Contributed to statewide gas demand modeling for the California Public Utilities Commission. Evaluated and optimized emergency medical service systems for Alameda County.</p>
+                        </div></div></div></div></div>
+                        <!-- Experience -->
+                        <div class="col-md-6"><div class="col-resume"><h4 class="title-uppercase">Experience</h4><div class="resume-content"><div class="resume-inner">
+                            <!-- Professional Profile -->
+                            <div class="resume-row">
+                                <h6 class="resume-type">Strategic Consultant & Policy Analyst</h6>
+                                <p class="resume-text text-dark">
+                                    With 5+ years of combined experience in management consulting and venture capital, 
+                                    I specialize in developing data-driven strategies for Fortune 500 companies and public sector organizations. 
+                                    Proven expertise in translating complex analyses into compelling executive presentations and client-facing materials.
+                                </p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                            
+                            <!-- Reader, UC Berkeley -->
+                            <div class="resume-row">
+                                <h6 class="resume-type">Reader, UC Berkeley</h6>
+                                <p class="resume-study">Berkeley, California</p>
+                                <p class="resume-date text-primary">July 2024 - Present</p>
+                                <ul class="resume-text text-dark">
+                                    <li>Assisted in Course Planning, and graded assignments</li>
+                                    <li>Summer Class: Industrial-Organizational Psychology</li>
+                                    <li>Fall Class: Text and Data Media History</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Class-Based Consultant, Marvell -->
+                            <div class="resume-row">
+                                <h6 class="resume-type">Class-Based Consultant, Marvell</h6>
+                                <p class="resume-study">Santa Clara, California</p>
+                                <p class="resume-date text-primary">Sep 2024 - Present</p>
+                                <ul class="resume-text text-dark">
+                                    <li>Conducted strategy and developed sustainable business solutions to achieve 2035 carbon reduction goals</li>
+                                    <li>Developed climate action and transition plans for internal consumers</li>
+                                    <li>Benchmarked peer companies and analyzed consumer structures to support emission reduction efforts</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Consultant Assistance, A.T. Kearney -->
+                            <div class="resume-row">
+                                <h6 class="resume-type">Consultant Assistance, A.T. Kearney</h6>
+                                <p class="resume-study">Singapore</p>
+                                <p class="resume-date text-primary">May 2023 - Jun 2023</p>
+                                <ul class="resume-text text-dark">
+                                    <li>Set market strategy for Singapore cold medical firm by screening 11+ key factors</li>
+                                    <li>Gathered data from 50 global logistics companies, summarizing key features</li>
+                                    <li>Aligned business types with client needs in vaccine transportation sector</li>
+                                </ul>
+                            </div>
+                        </div></div></div></div><!-- /.col -->
+                    </div></div></div></div></div></div></div>
+                </div><!-- /scroll-wrap -->
+            </div><!-- /page3 -->
 
         </div><!-- /pagepiling -->
 
@@ -353,14 +271,6 @@
             // Dynamic years of experience
             document.addEventListener('DOMContentLoaded', function(){ 
                 document.getElementById('copyright').textContent = new Date().getFullYear();
-                
-                // Reinitialize pagepiling with correct anchors
-                $('.pagepiling').pagepiling({
-                    menu: '#menu',
-                    anchors: ['page1', 'page2', 'page3'], // Now only 3 pages
-                    sectionsColor: ['#fff', '#fff', '#fff'],
-                    navigation: false
-                });
             });
         </script>
 
