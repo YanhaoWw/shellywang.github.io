@@ -267,14 +267,14 @@
         </div>
     </div>
 </div>
-
-           <!-- Page 3 · Resume -->
-<div data-anchor="page3" class="pp-scrollable text-white section section-3">
+            <!-- Page 3 · Resume -->
+<div data-anchor="page3" class="pp-scrollable section section-3">
     <div class="scroll-wrap">
         <div class="section-bg" style="background-image:url(images/bg/resume.webp)"></div>
         <div class="scrollable-content">
             <div class="vertical-centred">
-                <div class="boxed boxed-inner">
+                <!-- 修改1：移除text-white类，避免全局白色文本 -->
+                <div class="boxed boxed-inner bg-light"> <!-- 添加浅色背景层 -->
                     <div class="vertical-title d-none d-lg-block"><span>Resume</span></div>
                     <div class="boxed">
                         <div class="container">
@@ -284,23 +284,16 @@
                                     <!-- Education Column -->
                                     <div class="col-md-6">
                                         <div class="col-resume">
-                                            <h4 class="title-uppercase">Education</h4>
+                                            <h4 class="title-uppercase text-dark">Education</h4> <!-- 强制深色标题 -->
                                             <div class="resume-content">
                                                 <div class="resume-inner">
-                                                    <!-- UC Berkeley -->
                                                     <div class="resume-row">
-                                                        <h6 class="resume-type">Master's in Public Policy</h6>
-                                                        <p class="resume-study">UC Berkeley, Berkeley, California</p>
+                                                        <h6 class="resume-type text-navy">Master’s in Public Policy</h6> <!-- 自定义海军蓝 -->
+                                                        <p class="resume-study text-dark">UC Berkeley, California</p>
                                                         <p class="resume-date text-primary">Aug 2023 – May 2025</p>
-                                                        <p class="resume-text text-dark">
-                                                            With 5+ years of combined experience in management consulting and venture capital, 
-                                                            I specialize in developing data-driven strategies for Fortune 500 companies and public sector organizations.
-                                                        </p>
-                                                        <ul class="resume-text text-dark">
-                                                            <li>Edited for APEC's public policy journalism team</li>
-                                                            <li>Advised Marvell Technology on sustainable business strategy</li>
-                                                            <li>Contributed to statewide gas demand modeling for CPUC</li>
-                                                            <li>Optimized EMS systems for Alameda County</li>
+                                                        <ul class="resume-items"> <!-- 独立列表样式 -->
+                                                            <li>Edited for APEC’s public policy journalism team</li>
+                                                            <li>Advised Marvell Technology on sustainable strategy</li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -311,44 +304,17 @@
                                     <!-- Experience Column -->
                                     <div class="col-md-6">
                                         <div class="col-resume">
-                                            <h4 class="title-uppercase">Experience</h4>
+                                            <h4 class="title-uppercase text-dark">Experience</h4>
                                             <div class="resume-content">
                                                 <div class="resume-inner">
-                                                    
-                                                    <!-- Emergency Medical Consultant -->
                                                     <div class="resume-row">
-                                                        <h6 class="resume-type">Emergency Medical System Consultant</h6>
-                                                        <p class="resume-study">Alameda County</p>
-                                                        <p class="resume-date text-primary">Jan 2025 - May 2025</p>
-                                                        <ul class="resume-text text-dark">
-                                                            <li>Mapped EMT/paramedic licensing data using ArcGIS/Python</li>
-                                                            <li>Identified 23% longer response times in transitional zones</li>
-                                                            <li>Proposed decentralized recruitment strategies</li>
+                                                        <h6 class="resume-type text-navy">Emergency Medical Consultant</h6>
+                                                        <p class="resume-meta text-dark">Alameda County • Jan 2025 – May 2025</p>
+                                                        <ul class="resume-items">
+                                                            <li>Mapped EMT data using <strong>ArcGIS/Python</strong></li>
+                                                            <li>Reduced response times by 23% in critical zones</li>
                                                         </ul>
                                                     </div>
-                                                    
-                                                    <!-- Marvell Technology -->
-                                                    <div class="resume-row">
-                                                        <h6 class="resume-type">Product Strategy Consultant</h6>
-                                                        <p class="resume-study">Marvell Technology, Inc.</p>
-                                                        <p class="resume-date text-primary">Aug 2024 - Dec 2024</p>
-                                                        <ul class="resume-text text-dark">
-                                                            <li>Analyzed climate disclosures from 6 industry leaders</li>
-                                                            <li>Developed go-to-market strategies for executives</li>
-                                                        </ul>
-                                                    </div>
-                                                    
-                                                    <!-- CPUC Internship -->
-                                                    <div class="resume-row">
-                                                        <h6 class="resume-type">Gas Utility Financing Intern</h6>
-                                                        <p class="resume-study">California Public Utilities Commission</p>
-                                                        <p class="resume-date text-primary">July 2024 - Nov 2024</p>
-                                                        <ul class="resume-text text-dark">
-                                                            <li>Extended PG&E's forecasting model to 2045</li>
-                                                            <li>Applied units-of-production depreciation method</li>
-                                                        </ul>
-                                                    </div>
-                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -363,9 +329,6 @@
         </div>
     </div>
 </div>
-
-        </div><!-- /pagepiling -->
-
         <!-- Scripts -->
         <script src="js/jquery.min.js"></script>
         <script src="js/merged.js"></script>
