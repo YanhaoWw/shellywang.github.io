@@ -1,61 +1,134 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coding Projects | Shelly Wang</title>
-  
-  <!-- —— External libs —— -->
+  <meta name="description" content="Shelly Wang | Portfolio – Data‑viz, Deck Design & Photography" />
+
+  <title>Shelly Wang | Portfolio</title>
+
+  <!-- External libs -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
 
+  <!-- Quick styles -->
   <style>
+    :root{--primary:#003366}
     body{font-family:Montserrat,Arial,sans-serif;background:#f8f9fa;}
-    h1{color:#003366;margin-top:40px;font-weight:600;}
-    .project-card{background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.05);transition:.3s;}
-    .project-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.08);} 
-    .project-card .fa-link{color:#003366;}
+    .navbar{box-shadow:0 2px 6px rgba(0,0,0,.05)}
+    .hero{background:url(images/bg/main.webp) center/cover no-repeat;min-height:55vh;color:#fff}
+    .hero h1{text-shadow:0 2px 8px rgba(0,0,0,.5)}
+    /* project cards */
+    .proj-card{background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.05);transition:.3s;overflow:hidden;display:flex;flex-direction:column;height:100%;}
+    .proj-card:hover{transform:translateY(-6px);box-shadow:0 10px 24px rgba(0,0,0,.08)}
+    .proj-card img{width:100%;height:180px;object-fit:cover}
+    .proj-card h5{color:var(--primary);font-weight:600;margin:15px 0 6px;font-size:1.1rem}
+    .proj-card p{font-size:.85rem;color:#6c757d;}
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-light bg-light sticky-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="../index.html#page2">← Back to Work</a>
-    </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-light bg-white sticky-top">
+    <div class="container"><a class="navbar-brand fw-bold" href="#home">Shelly Wang</a></div>
   </nav>
 
-  <div class="container">
-    <h1 class="text-center">Coding Projects</h1>
-    <p class="text-center text-muted mb-5">A selection of small apps, data‑viz and experiments I’ve built with Python, JavaScript and D3.</p>
-
-    <div class="row g-4">
-      <!-- EXAMPLE CARD 1 -->
-      <div class="col-12 col-md-6">
-        <div class="project-card p-4 h-100 d-flex flex-column">
-          <h4 class="mb-2">Interactive COVID‑19 Dashboard</h4>
-          <p class="flex-grow-1">Real‑time data scraping + D3.js charts, deployed on Netlify. Users can filter by country, timeline and metric.</p>
-          <div class="small"><i class="fa-brands fa-github me-1"></i><a href="https://github.com/yourrepo/covid-dashboard" target="_blank">Source code</a> · <i class="fa-solid fa-link ms-3 me-1"></i><a href="https://yourliveapp.com" target="_blank">Live demo</a></div>
-        </div>
-      </div>
-
-      <!-- EXAMPLE CARD 2 -->
-      <div class="col-12 col-md-6">
-        <div class="project-card p-4 h-100 d-flex flex-column">
-          <h4 class="mb-2">Stock‑Price Notifier (Python)</h4>
-          <p class="flex-grow-1">A Telegram bot that pings price alerts using Alpha Vantage API + Heroku scheduler.</p>
-          <div class="small"><i class="fa-brands fa-github me-1"></i><a href="https://github.com/yourrepo/stock-notifier" target="_blank">Source code</a></div>
-        </div>
-      </div>
-
-      <!-- Add more cards here -->
-
+  <!-- Home / Hero -->
+  <section id="home" class="hero d-flex align-items-center text-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold mb-3">Hello, I’m <span class="text-warning">Shelly Wang</span></h1>
+      <p class="lead">Data‑viz & deck‑design consultant · Coder · Freelance photographer</p>
     </div>
-  </div>
+  </section>
 
-  <footer class="py-4 text-center small text-muted">
-    © <span id="year"></span> Shelly Wang
+  <!-- Projects – everything visible -->
+  <section id="projects" class="py-5" style="background:url(images/bg/project.webp) center/cover no-repeat;">
+    <div class="container">
+      <h2 class="text-center mb-5" style="color:var(--primary);font-weight:600;">PROJECTS</h2>
+      <div class="row g-4">
+        <!-- EXAMPLE cards — replace thumb + link + copy as needed -->
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="projects/energy.html" class="text-decoration-none">
+            <div class="proj-card">
+              <img src="images/thumbs/energy.webp" alt="Energy" />
+              <div class="p-3 flex-grow-1 d-flex flex-column">
+                <h5>Energy</h5>
+                <p class="flex-grow-1">Clean‑energy market dashboard & report.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="projects/health.html" class="text-decoration-none">
+            <div class="proj-card">
+              <img src="images/thumbs/health.webp" alt="Health" />
+              <div class="p-3 d-flex flex-column flex-grow-1">
+                <h5>Health</h5>
+                <p class="flex-grow-1">Tele‑medicine analysis & interactive charts.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="projects/economy.html" class="text-decoration-none">
+            <div class="proj-card">
+              <img src="images/thumbs/economy.webp" alt="Local Economy" />
+              <div class="p-3 d-flex flex-column flex-grow-1">
+                <h5>Local Economy</h5>
+                <p class="flex-grow-1">Community growth metrics with D3.js.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="projects/housing.html" class="text-decoration-none">
+            <div class="proj-card">
+              <img src="images/thumbs/housing.webp" alt="Housing" />
+              <div class="p-3 d-flex flex-column flex-grow-1">
+                <h5>Housing</h5>
+                <p class="flex-grow-1">Affordable‑housing Tableau story.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="projects/coding.html" class="text-decoration-none">
+            <div class="proj-card">
+              <img src="images/thumbs/coding.webp" alt="Coding" />
+              <div class="p-3 d-flex flex-column flex-grow-1">
+                <h5>Coding Experiments</h5>
+                <p class="flex-grow-1">Python, JS & data‑viz prototypes.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="projects/photo.html" class="text-decoration-none">
+            <div class="proj-card">
+              <img src="images/thumbs/photo.webp" alt="Photography" />
+              <div class="p-3 d-flex flex-column flex-grow-1">
+                <h5>Photography</h5>
+                <p class="flex-grow-1">Street & portrait shoots showcased on TikTok.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- /cards -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center small bg-white">
+    © <span id="yr"></span> Shelly Wang · All rights reserved
   </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
