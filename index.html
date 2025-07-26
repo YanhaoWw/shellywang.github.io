@@ -3,23 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Personal Website and Portfolio | Graduate student and researcher at UC Berkeley | Photographer | Consultant"/>
+    <meta name="description" content="Personal Website | Deck Design Consultant & Coding Projects"/>
 
     <!-- Canonical & Open‑Graph -->
     <link rel="canonical" href="https://kingshuk.me"/>
     <meta property="og:type"        content="website"/>
-    <meta property="og:title"       content="Hi! I'm Shelly Wang"/>
-    <meta property="og:description" content="Personal Website and Portfolio"/>
+    <meta property="og:title"       content="Shelly Wang – Work"/>
+    <meta property="og:description" content="Deck design consulting & coding portfolio"/>
     <meta property="og:image"       content="https://raw.githubusercontent.com/YanhaoWw/shellywang.github.io/refs/heads/main/images/bg/main.webp"/>
     <meta property="og:url"         content="https://kingshuk.me"/>
 
     <!-- Icons -->
     <link rel="shortcut icon"       href="favicon.png"/>
-    <link rel="apple-touch-icon"    href="apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72"  href="apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png"/>
 
-    <title>Hi! I'm Shelly Wang</title>
+    <title>Shelly Wang | Work</title>
 
     <!-- Fonts & CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
@@ -30,24 +27,12 @@
     <link rel="stylesheet" href="css/bootstrap-grid.min.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 
-    <!-- Analytics (replace with your tag) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=ADDYOURGTAGINFO"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}  
-      gtag('js', new Date());
-      gtag('config','ADDYOURGTAGINFO');
-    </script>
-
     <!-- Inline tweaks (quick override) -->
     <style>
-        /* ───── Global helpers ───── */
         :root {
-            --contact-bg-alpha: .30;   /* 背景透明度 */
-            --contact-border-alpha: .70; /* 边框透明度 */
+            --contact-bg-alpha: .30;
+            --contact-border-alpha: .70;
         }
-
-        /* Frost‑glass util */
         .frosted-glass {
             background: rgba(255,255,255,0.85);
             backdrop-filter: blur(10px);
@@ -57,8 +42,6 @@
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
             border: 1px solid rgba(255,255,255,0.18);
         }
-
-        /* ───── Top contact pill ───── */
         .navbar .contacts {
             background: rgba(255,255,255,var(--contact-bg-alpha));
             backdrop-filter: blur(5px);
@@ -71,7 +54,6 @@
         .navbar .contact-item,
         .navbar .contact-item a { color:#003366 !important; font-weight:500; }
 
-        /* Remove dark overlay on hero */
         .section-1 .boxed-inner { background:none; padding:40px; border-radius:15px; }
         .section-1 h1{ text-shadow:0 2px 8px rgba(0,0,0,.7);} 
 
@@ -103,26 +85,22 @@
     <div class="animsition">
         <div class="click-capture"></div>
 
-        <!-- ───────────── Menu (side / mobile) ───────────── -->
+        <!-- Menu -->
         <div class="menu">
             <span class="close-menu icon-cross2 right-boxed"></span>
             <ul class="menu-list right-boxed">
-                <!-- Simplified navigation: Home & Project only -->
                 <li data-menuanchor="page1"><a href="#page1">Home</a></li>
-                <li data-menuanchor="page2"><a href="#page2">Project</a></li>
+                <li data-menuanchor="page2"><a href="#page2">Work</a></li>
             </ul>
             <div class="menu-footer right-boxed">
                 <div class="social-list">
-                    <a href="https://www.facebook.com/kingshukkunduu/" class="icon ion-social-facebook"></a>
-                    <a href="https://www.instagram.com/kingshuk_kundu/" class="icon ion-social-instagram"></a>
-                    <a href="https://www.twitter.com/kingshukkunduu/" class="icon ion-social-twitter"></a>
                     <a href="https://www.linkedin.com/in/kingshukk/" class="icon ion-social-linkedin"></a>
-                    <a href="https://github.com/kingshukkundu"          class="icon ion-social-github"></a>
+                    <a href="https://github.com/kingshukkundu" class="icon ion-social-github"></a>
                 </div>
             </div>
-        </div><!-- /menu -->
+        </div>
 
-        <!-- ───────────── Top navbar ───────────── -->
+        <!-- Top navbar -->
         <header class="navbar boxed">
             <div class="navbar-bg"></div>
             <a class="brand" href="#page1"></a>
@@ -134,24 +112,17 @@
             </div>
         </header>
 
-        <!-- ───────────── Footer mini pills ───────────── -->
-        <div class="copy-bottom boxed">
-            <div>© Shelly Wang <span id="copyright"></span></div>
-        </div>
+        <!-- Footer mini pills -->
+        <div class="copy-bottom boxed"><div>© Shelly Wang <span id="copyright"></span></div></div>
         <script>document.getElementById('copyright').textContent = new Date().getFullYear();</script>
-
         <div class="social-list social-list-bottom boxed">
-            <a href="https://www.facebook.com/kingshukkunduu/" class="icon ion-social-facebook"></a>
-            <a href="https://www.instagram.com/kingshuk_kundu/" class="icon ion-social-instagram"></a>
-            <a href="https://www.twitter.com/kingshukkunduu/" class="icon ion-social-twitter"></a>
             <a href="https://www.linkedin.com/in/kingshukk/" class="icon ion-social-linkedin"></a>
-            <a href="https://github.com/kingshukkundu"          class="icon ion-social-github"></a>
+            <a href="https://github.com/kingshukkundu" class="icon ion-social-github"></a>
         </div>
 
-        <!-- ───────────── Pagepiling sections ───────────── -->
+        <!-- Pagepiling sections -->
         <div class="pagepiling">
-
-            <!-- Page 1 · Home -->
+            <!-- Home -->
             <div data-anchor="page1" class="pp-scrollable text-white section section-1">
                 <div class="scroll-wrap">
                     <div class="section-bg" style="background-image:url(images/bg/main.webp)"></div>
@@ -161,73 +132,40 @@
                                 <div class="vertical-title d-none d-lg-block"><span>Welcome</span></div>
                                 <div class="boxed"><div class="container"><div class="intro"><div class="row"><div class="col-lg-10">
                                     <h1 class="title-uppercase"><span class="text-primary">Hello </span>I am<br>
-                                        <noscript>Shelly Wang, a Developer, Photographer & Consultant</noscript>
-                                        <span class="typed" data-typed-items="Shelly Wang, a Developer, a Photographer, a Consultant"></span>
+                                        <noscript>Shelly Wang, Deck Design Consultant & Coder</noscript>
+                                        <span class="typed" data-typed-items="Deck Design Consultant, Coder"></span>
                                     </h1>
                                 </div></div></div></div></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div><!-- /page1 -->
+            </div>
 
-            <!-- Page 2 · Project (single showcase page) -->
+            <!-- Work -->
             <div data-anchor="page2" class="pp-scrollable section section-5">
                 <div class="scroll-wrap">
                     <div class="bg-changer"><div class="section-bg" style="background-image:url(images/bg/project.webp)"></div><div style="position:absolute;inset:0;background:rgba(255,255,255,.3);"></div></div>
                     <div class="scrollable-content"><div class="vertical-centred"><div class="boxed boxed-inner">
                         <div class="vertical-title d-none d-lg-block"><span>my work</span></div>
                         <div class="boxed"><div class="container"><div class="frosted-glass"><div class="intro text-center">
-                            <h2 class="title-uppercase" style="color:#003366;margin-bottom:30px;">PROJECT</h2>
-                            <div class="row row-project-box">
-                                <!-- Energy -->
-                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4"><a href="projects/energy.html" class="project-box"><div class="project-box-inner">
-                                    <div class="project-icon"><i class="fas fa-bolt"></i></div><h5>Energy</h5></div></a></div>
-                                <!-- Health -->
-                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4"><a href="projects/health.html" class="project-box"><div class="project-box-inner">
-                                    <div class="project-icon"><i class="fas fa-heartbeat"></i></div><h5>Health</h5></div></a></div>
-                                <!-- Economy -->
-                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4"><a href="projects/economy.html" class="project-box"><div class="project-box-inner">
-                                    <div class="project-icon"><i class="fas fa-chart-line"></i></div><h5>Local Economy</h5></div></a></div>
-                                <!-- Housing -->
-                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4 mt-4 mx-auto"><a href="projects/housing.html" class="project-box"><div class="project-box-inner">
-                                    <div class="project-icon"><i class="fas fa-home"></i></div><h5>Housing</h5></div></a></div>
-                                <!-- Photography (NEW) -->
-                                <div class="col-project-box col-sm-6 col-md-4 col-lg-4 mt-4 mx-auto"><a href="projects/photography.html" class="project-box"><div class="project-box-inner">
-                                    <div class="project-icon"><i class="fas fa-camera"></i></div><h5>Photography</h5></div></a></div>
-                            </div><!-- /.row -->
+                            <h2 class="title-uppercase" style="color:#003366;margin-bottom:30px;">WORK</h2>
+                            <div class="row row-project-box justify-content-center">
+                                <!-- Deck Design -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-3 mb-4"><a href="projects/deck.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-layer-group"></i></div><h5>Deck&nbsp;Design</h5></div></a></div>
+                                <!-- Coding -->
+                                <div class="col-project-box col-sm-6 col-md-4 col-lg-3 mb-4"><a href="projects/coding.html" class="project-box"><div class="project-box-inner">
+                                    <div class="project-icon"><i class="fas fa-code"></i></div><h5>Coding&nbsp;Projects</h5></div></a></div>
+                            </div>
                         </div></div></div></div></div></div></div>
-                </div><!-- /scroll-wrap -->
-            </div><!-- /page2 -->
-
-            <!-- The original Skills and Resume sections have been removed to keep the site lean -->
-
-        </div><!-- /pagepiling -->
+                </div>
+            </div>
+        </div>
 
         <!-- Scripts -->
         <script src="js/jquery.min.js"></script>
         <script src="js/merged.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
-        <script>
-            // Dynamic years of experience
-            document.addEventListener('DOMContentLoaded', function(){ document.getElementById('exp') && (document.getElementById('exp').textContent = new Date().getFullYear() - 2020); });
-        </script>
-
-        <!-- Structured Data -->
-        <script type="application/ld+json">{
-            "@context":"https://schema.org/",
-            "@type":"Person",
-            "name":"Shelly Wang",
-            "gender":"Female",
-            "url":"https://yanhaoww.github.io/shellywang.github.io",
-            "image":"https://raw.githubusercontent.com/YanhaoWw/shellywang.github.io/refs/heads/main/images/bg/main.webp",
-            "sameAs":["https://www.linkedin.com/in/selly-wang","https://github.com/shellywang"],
-            "jobTitle":"Consultant",
-            "worksFor":{"@type":"Organization","name":"UC Berkeley"},
-            "alumniOf":"UC Berkeley",
-            "email":"yanhao_wang@berkeley.edu"
-        }</script>
-
-    </div><!-- /.animsition -->
 </body>
 </html>
