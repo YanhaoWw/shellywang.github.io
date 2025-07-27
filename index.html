@@ -1,34 +1,185 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-    <title>Shelly Wang - Minimal Test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Shelly Wang's Portfolio | UC Berkeley MPP Candidate">
+    
+    <title>Shelly Wang | Portfolio</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Core CSS -->
     <style>
-        section { 
-            height: 100vh; 
-            padding: 50px;
-            font-family: Arial;
+        /* ===== 基础重置 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        #page1 { background: #003366; color: white; }
-        #page2 { background: #f0f0f0; }
-        #page3 { background: #fff; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* ===== 页面布局 ===== */
+        .pp-scrollable {
+            display: block !important;
+            opacity: 1 !important;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+        
+        /* ===== 简历页面专用样式 ===== */
+        .resume-section {
+            background: rgba(255, 240, 245, 0.95);
+            color: #333;
+            padding: 50px 0;
+        }
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .resume-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .resume-contact {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        .resume-contact .divider {
+            margin: 0 15px;
+            color: #999;
+        }
+        .section-title {
+            color: #002b5c;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+        .resume-item {
+            margin-bottom: 30px;
+        }
+        .resume-item h3 {
+            color: #002b5c;
+            margin: 15px 0 5px;
+        }
+        .resume-meta {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .resume-items {
+            padding-left: 20px;
+        }
+        .resume-items li {
+            margin-bottom: 8px;
+        }
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .skill-tag {
+            background: rgba(0,43,92,0.1);
+            color: #002b5c;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* ===== 响应式设计 ===== */
+        @media (max-width: 768px) {
+            .resume-contact {
+                flex-direction: column;
+            }
+            .resume-contact .divider {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="pagepiling">
-        <div class="section" id="page1">
-            <h1>Hello World</h1>
-            <p>如果这个页面能显示，说明是JS/CSS冲突问题</p>
+
+    <!-- ===== 简历页面 ===== -->
+    <div data-anchor="resume" class="pp-scrollable resume-section">
+        <div class="resume-container">
+            <!-- 联系方式 -->
+            <div class="resume-header">
+                <h1>Shelly Wang</h1>
+                <div class="resume-contact">
+                    <span>+1 510 993 6596</span>
+                    <span class="divider">|</span>
+                    <a href="mailto:yanhao_wang@berkeley.edu">yanhao_wang@berkeley.edu</a>
+                </div>
+            </div>
+            
+            <div class="resume-content">
+                <div class="row">
+                    <!-- 教育经历 -->
+                    <div class="col-md-6">
+                        <h2 class="section-title">EDUCATION</h2>
+                        <div class="resume-item">
+                            <h3>Master's in Public Policy</h3>
+                            <p class="resume-meta">UC Berkeley, California | Aug 2023 – May 2025</p>
+                            <ul class="resume-items">
+                                <li>Edited for APEC's public policy journalism team</li>
+                                <li>Advised Marvell Technology on sustainable strategy</li>
+                                <li>Contributed to statewide gas demand modeling</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 工作经历 -->
+                    <div class="col-md-6">
+                        <h2 class="section-title">EXPERIENCE</h2>
+                        
+                        <div class="resume-item">
+                            <h3>Emergency Medical Consultant</h3>
+                            <p class="resume-meta">Alameda County | Jan 2025 – May 2025</p>
+                            <ul class="resume-items">
+                                <li>Mapped EMT data using <strong>ArcGIS/Python</strong></li>
+                                <li>Reduced response times by 23% in critical zones</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="resume-item">
+                            <h3>Product Strategy Consultant</h3>
+                            <p class="resume-meta">Marvell Technology, Inc. | Aug 2024 – Dec 2024</p>
+                            <ul class="resume-items">
+                                <li>Analyzed climate disclosures from 6 industry leaders</li>
+                                <li>Developed executive presentations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 技能 -->
+                <div class="skills-section">
+                    <h2 class="section-title">SKILLS</h2>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Policy Analysis</span>
+                        <span class="skill-tag">ArcGIS</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Data Visualization</span>
+                        <span class="skill-tag">Stakeholder Management</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="section" id="page2">Page 2</div>
-        <div class="section" id="page3">Page 3</div>
     </div>
 
-    <!-- 测试用基础库 -->
+    <!-- 核心JS库 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.min.js"></script>
     <script>
+        // 基础功能保障
         $(document).ready(function() {
-            $('#pagepiling').pagepiling();
+            console.log('页面已完全加载');
+            // 这里可以添加pagePiling初始化代码
         });
     </script>
 </body>
